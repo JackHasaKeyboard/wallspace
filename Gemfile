@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'haml', '~> 4.0.7'
 gem 'fastimage', '~> 1.9'
+gem 'open-uri-cached', '~> 0.0.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
