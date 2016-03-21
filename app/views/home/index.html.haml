@@ -3,4 +3,6 @@
 - url = open("http://wallppr.tumblr.com/").read
 
 - imgs = URI.extract(url).select{|img| img[/\.(?:png|jpe?g)\b/]}.each do |img|
+	- size = FastImage.size(img)
+	= size
 	= image_tag(img)
