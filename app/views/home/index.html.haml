@@ -1,0 +1,6 @@
+- require "open-uri"
+
+- url = open("http://wallppr.tumblr.com/").read
+
+- imgs = URI.extract(url).select{|img| img[/\.(?:png|jpe?g)\b/]}.each do |img|
+	= image_tag(img)
