@@ -1,6 +1,11 @@
-- url = open("http://wallppr.tumblr.com/").read
+- require "open-uri"
 
-- imgs = URI.extract(url).select{|img| img[/\.(?:png|jpe?g)\b/]}.each do |img|
-	- size = FastImage.size(img)
-	= size
-	= image_tag(img)
+%h1 Wallspace
+
+#disp
+	- url = open("http://wallppr.tumblr.com/").read
+
+	- imgs = URI.extract(url).select{|img| img[/\.(?:png|jpe?g)\b/]}.each do |img|
+		%span
+			%div= "#{FastImage.size(img) and FastImage.size(img)[0]}" + "x" + "#{FastImage.size(img) and FastImage.size(img)[1]}"
+			= image_tag(img)
