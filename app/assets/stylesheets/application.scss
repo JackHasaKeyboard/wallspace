@@ -14,8 +14,11 @@
  *= require_self
  */
 
+ @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
  body * {
  	margin: 0;
+ 	font-family: Ubuntu Mono;
  }
 
  a {
@@ -24,4 +27,18 @@
 
  li {
  	list-style: none;
+ }
+
+ #disp {
+ 	span {
+ 		float: left;
+ 		margin: 8px;
+ 		div {
+ 			padding-top: 10px;
+ 			padding-bottom: 10px;
+ 		}
+ 		img {
+ 			height: 260px;
+ 		}
+ 	}
  }
