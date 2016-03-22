@@ -1,11 +1,11 @@
 - require "open-uri"
 
-%h1 Wallspace
+%h3 Wallspace
 
 #disp
 	- url = open("http://iphone6walls.tumblr.com/").read
 
 	- imgs = URI.extract(url).select{|img| img[/\.(?:png|jpe?g)\b/]}.each do |img|
 		- if FastImage.size(img) and FastImage.size(img)[0] >= 750 && FastImage.size(img) and FastImage.size(img)[1] >= 1334
-			%span
+			%a{href: img, download: img, target: "blank"}
 				= image_tag(img)
