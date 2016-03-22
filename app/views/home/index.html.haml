@@ -3,9 +3,9 @@
 %h1 Wallspace
 
 #disp
-	- url = open("http://wallppr.tumblr.com/").read
+	- url = open("http://iphone6walls.tumblr.com/").read
 
 	- imgs = URI.extract(url).select{|img| img[/\.(?:png|jpe?g)\b/]}.each do |img|
-		%span
-			%div= "#{FastImage.size(img) and FastImage.size(img)[0]}" + "x" + "#{FastImage.size(img) and FastImage.size(img)[1]}"
-			= image_tag(img)
+		- if FastImage.size(img) and FastImage.size(img)[0] >= 750 && FastImage.size(img) and FastImage.size(img)[1] >= 1334
+			%span
+				= image_tag(img)
